@@ -1,0 +1,6 @@
+The college you entered was not found!
+<%= form_with url: "search", method: :post, local: true  do |form| %>
+  <%= form.label :query, "Search by college name:" %>
+  <%= form.text_field :query %>
+  <%= form.submit "colleges/search" %>
+<% end %>

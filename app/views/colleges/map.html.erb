@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <%= form_with url: "search", method: :post, local: true  do |form| %>
+    <%= form.label :query, "Search by college name:" %>
+    <%= form.text_field :query %>
+    <%= form.submit "Search" %>
+  <% end %>
+
+  <div class="map-container">
+    <p>
+          <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?size=400x300&markers=size:small%7Ccolor:red%7C#{@markers}&key=".html_safe + ENV.fetch("GOOGLE_API_KEY", nil), alt: "Map" %>
+    </p>
+  </div>
+</html>
